@@ -179,17 +179,86 @@
 
 \begin{figure}
 \begin{center}
-\caption{Q02: $L_1$ = (b+ab)*(a+$\Limbda$)
+\caption{Q03: $L_1$ = (b+ab)*(a+$\Lambda$)}
 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
-\tikzstyle{every state}=[draw=black,text=black, ball color=green!40!blue!20!]
+\tikzstyle{every state}=[draw=black,text=black, ball color=white!40!blue!20!]
 \node[initial,state] (A) {A};
-\node[state] [right of=A](B){B};
-\node[state,accepting][right of=B](C){C};
-\path (A)edge [bend left]node{b}(B)
-              edge [bend right]node{ab}(B)
-          (B)edge [loop above]node{b,ab}(B)
-              edge [bend left]node{a}(C)
-              edge node{$\Limbda$}(C);
+\node[state,accepting] [below right of=A](B){B};
+\node[state,accepting][below left of=A](D){D};
+\path (A)edge [bend left]node{a}(B)
+              edge [loop above]node{b}(A)
+              edge node{$\Lambda$}(D)
+          (B)edge [bend left]node{b}(A);
+            
+             
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{Q03: $L_2$ = (a+b)*aa(a+b)*}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=white!40!red!20!]
+\node[initial,state] (X) {X};
+\node[state][right of=X](Y){Y};
+\node[state,accepting][right of=Y](Z){Z};
+\path (X)edge [bend left]node{a}(Y)
+              edge[loop above]node{b}(X)
+         (Y)edge node{a}(Z)
+              edge [bend left]node{b}(X)
+         (Z)edge [loop above]node{a,b}(Z);
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{Q02: $L_1$$\bigcap$$L_2$}
+\begin{tikzpicture}[->,shorten >=1pt,node distance=4cm,auto]
+\tikzstyle{every state} = [rectangle, draw, fill=red!45!yellow!60!, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
+\tikzstyle{noise}=[circle,
+                                    thick,
+                                    minimum size=1.2cm,
+                                    draw=yellow!85!black,
+                                    fill=yellow!40,
+                                    decorate,
+                                    drop shadow,
+                                    decoration={random steps,
+                                                            segment length=2pt,
+                                                            amplitude=2pt}]
+\node[initial,state] (AX){AX};
+\node[state][below of=AX](BY){BY};
+\node[state][below of=BY](BZ){BZ};
+\node[noise,accepting][below left of=BZ](CRASH){CRASH};
+\node[state][below right of=BZ](AZ){AZ};
+\path (AX)edge node{a}(BY)
+                edge [loop above]node{b}(AX)
+          (BY)edge node{a}(BZ)
+                edge [bend right]node{b}(AX)
+          (BZ)edge node{b}(AZ)
+                edge node{a}(CRASH)
+          (AZ)edge [bend right]node{a}(BZ)
+                edge [loop below]node{b}(AZ);
+         
+\end{tikzpicture}
+\end{center}
+\end{figure}
+\begin{figure}
+\begin{center}
+\caption{Q03: $L_3$ = (b*+a)(a+b)ba}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=blue!40!green!70!]
+\node[initial,state] (AX) {AX};
+\node[state][right of=AX](BY){BY};
+\node[state,accepting][right of=BY](BZ){BZ};
+\node[state][right of=BZ](AZ){AZ};
+\path (AX)edge [loop above]node{b}(AX)
+                edge node{a}(BY)
+          (BY)edge [bend left]node{b}(AX)
+                edge node{a}(BZ)
+          (BZ)edge node{b}(AZ)
+          (AZ)edge [bend left]node{a}(BZ);   
 \end{tikzpicture} 
 \end{center}
 \end{figure}
