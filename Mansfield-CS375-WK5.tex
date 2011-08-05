@@ -246,7 +246,7 @@
 \end{figure}
 \begin{figure}
 \begin{center}
-\caption{Q03: $L_3$ = (a+b)*aaba}
+\caption{Q03: $L_3$ = (a+b)*aab(b+a)*}
 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
 \tikzstyle{every state}=[draw=black,text=black, ball color=blue!40!green!70!]
 \node[initial,state] (AX) {AX};
@@ -258,7 +258,8 @@
           (BY)edge [bend left]node{b}(AX)
                 edge node{a}(BZ)
           (BZ)edge node{b}(AZ)
-          (AZ)edge [bend left]node{a}(BZ);   
+          (AZ)edge [bend left]node{a}(BZ)
+                edge [loop above]node{b}(AZ);   
 \end{tikzpicture} 
 \end{center}
 \end{figure}
