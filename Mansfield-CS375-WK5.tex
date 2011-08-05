@@ -177,4 +177,21 @@
 \end{center}
 \end{figure}
 
+\begin{figure}
+\begin{center}
+\caption{Q02: $L_1$ = (b+ab)*(a+$\Limbda$)
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=green!40!blue!20!]
+\node[initial,state] (A) {A};
+\node[state] [right of=A](B){B};
+\node[state,accepting][right of=B](C){C};
+\path (A)edge [bend left]node{b}(B)
+              edge [bend right]node{ab}(B)
+          (B)edge [loop above]node{b,ab}(B)
+              edge [bend left]node{a}(C)
+              edge node{$\Limbda$}(C);
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
 \end{document}
