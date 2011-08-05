@@ -381,12 +381,12 @@
 \end{tikzpicture} 
 \end{center}
 \end{figure}
-\end{document}
+
 \clearpage
 \begin{figure}
 \begin{center}
 \caption{Q05: $L_1$$\bigcap$$L_2$}
-\begin{tikzpicture}[->,shorten >=1pt,node distance=5cm,auto]
+\begin{tikzpicture}[->,shorten >=1pt,node distance=3.5cm,auto]
 \tikzstyle{every state} = [rectangle, draw, fill=red!45!yellow!60!, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
 \tikzstyle{noise}=[circle,
                                     thick,
@@ -401,15 +401,113 @@
 \node[initial,state] (AA){AA};
 \node[state][below left of=AA](BB){BB};
 \node[state][below left of=BB](DB){DB};
-\node[noise][below right of=DB](CRASH){CRASH};
+\node[noise][below right of=BB](CRASH){CRASH};
 \node[state,accepting][below left of=DB](AB){AB};
 \node[state][below right of=AA](CC){CC};
 \node[state][below right of=CC](EC){EC};
 \node[state][below right of=EC](AC){AC};
 \node[state][below left of=AC](BC){BC};
 \node[state][below left of=BC](DC){DC};
-\path (AA)edge node{a}(BB);
+\path (AA)edge node{a}(BB)
+                edge node{b}(CC)
+          (BB)edge node{a}(DB)
+                edge node{b}(CRASH)
+          (DB)edge node{a}(AB)
+                edge node{b}(CRASH)
+          (CC)edge node{a}(CRASH)
+                edge node{b}(EC)
+          (EC)edge node{a}(CRASH)
+                edge node{b}(AC)
+          (AC)edge node{a}(BC)
+                 edge [bend right=89]node{b}(CC)
+          (BC)edge node{a}(DC)
+                edge node{b}(CRASH)
+           (DC)edge [bend right=89]node{a}(AC)
+                  edge node{b}(CRASH);
         
 \end{tikzpicture}
 \end{center}
 \end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{Q05: $L_3$= aaa}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=blue!40]
+\node[initial,state] (AA) {AA};
+\node[state][right of=AA](BB){BB};
+\node[state][right of=BB](DB){DB};
+\node[state,accepting][right of=DB](AB){AB};
+\path (AA)edge node{a}(BB)
+          (BB)edge node{a}(DB)
+          (DB)edge node{a}(AB);
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{Q06: $FA_1$}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3.8cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=orange]
+\node[initial,state,accepting] (A) {A};
+\node[state,accepting][below right of=A](B){B};
+\node[state,accepting][below of=B](C){C};
+\node[state,accepting][below left of=A](E){E};
+\node[state][below of=E](D){D};
+\path (A)edge node{a}(B)
+              edge node{b}(E)
+          (B)edge [loop above]node{a}(B)
+              edge node{b}(C)
+          (C)edge [loop below]node{b}(C)
+              edge node{a}(D)
+          (D)edge [loop below]node{a+b}(D)
+          (E)edge [loop above]node{b}(E)
+              edge node{a}(D);    
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{Q06: $FA_2$}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3.8cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=green]
+\node[initial,state,accepting] (A) {A};
+\node[state,accepting][right of=A](B){B};
+\node[state][right of=B](C){C};
+\path (A)edge node{b}(B)
+              edge [loop above]node{a}(A)
+          (B)edge node{a}(C)
+              edge [loop above]node{b}(B)
+          (C)edge [loop above]node{a+b}(C);
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{Q05: $L_1$$\bigcap$$L_2$}
+\begin{tikzpicture}[->,shorten >=1pt,node distance=3.5cm,auto]
+\tikzstyle{every state} = [rectangle, draw, fill=red!45!yellow!60!, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
+\tikzstyle{Not} = [rectangle, draw, fill=red!45!yellow!60!, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
+\node[initial,state] (AA){AA};
+\node[state][below left of=AA](BA){BA};
+\node[state][below right of=AA](EB){EB};
+\node[state][below of=EB](DC){DC};
+\node[state][below of=BA](CB){CB};
+\path (AA)edge node{a}(BA)
+                edge node{b}(EB)
+          (BA)edge node{b}(CB)
+                edge [loop left]node{b}(BA)
+          (CB)edge node{a}(DC)
+                edge [loop left]node{b}(CB)
+          (EB)edge node{a}(DC)
+                edge [loop right]node{b}(EB)
+          (DC)edge [loop below]node{a+b}(DC);
+                  
+\end{tikzpicture}
+\end{center}
+\end{figure}
+
+\end{document}
