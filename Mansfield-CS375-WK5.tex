@@ -77,7 +77,7 @@
 
 \begin{figure}
 \begin{center}
-\caption{Q01: $L_3$ = b(b*+a)(a*+b)}
+\caption{Q01: $L_3$ = b(b+aa*b)*}
 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
 \tikzstyle{every state}=[draw=black,text=black, ball color=blue!20]
 \node[initial,state] (XA) {XA};
@@ -164,7 +164,7 @@
 
 \begin{figure}
 \begin{center}
-\caption{Q02: $L_3$ = bb(a+b)*}
+\caption{Q02: $L_3$ = ab(a+b)*}
 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
 \tikzstyle{every state}=[draw=black,text=black, ball color=red!40!blue!20!]
 \node[initial,state] (XA) {XA};
@@ -246,7 +246,7 @@
 \end{figure}
 \begin{figure}
 \begin{center}
-\caption{Q03: $L_3$ = (a+b)*aab(b+a)*}
+\caption{Q03: $L_3$ = (b+ab)*aa(bb*a)*}
 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
 \tikzstyle{every state}=[draw=black,text=black, ball color=blue!40!green!70!]
 \node[initial,state] (AX) {AX};
@@ -263,5 +263,153 @@
 \end{tikzpicture} 
 \end{center}
 \end{figure}
+\clearpage
+\begin{figure}
+\begin{center}
+\caption{Q04: $L_1$ = (aa+ab+ba+bb)*}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=red!40!white!20!]
+\node[initial,state,accepting] (A) {A};
+\node[state][above right of=A](B){B};
+\node[state][below right of=A](C){C};
+\path (A)edge [bend left]node{a}(B)
+              edge [bend left]node{b}(C)
+          (B)edge [bend left]node{a}(A)
+              edge [bend left]node{$\Lambda$}(C)
+          (C)edge [bend left]node{b}(A)
+              edge [bend right=78]node{$\Lambda$}(B);          
+\end{tikzpicture} 
+\end{center}
+\end{figure}
 
+\begin{figure}
+\begin{center}
+\caption{Q04: $L_2$= b(a+b)*}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=orange]
+\node[initial,state] (A) {A};
+\node[state,accepting][above right of=A](B){B};
+\node[state][below right of=A](C){C};
+\path (A)edge node{b}(B)
+         edge  node{a}(C)
+      (B)edge  [loop above]node{a,b}(B)
+      (C)edge [loop above]node{a,b}(C);
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{Q04: $L_1$$\bigcap$$L_2$}
+\begin{tikzpicture}[->,shorten >=1pt,node distance=5cm,auto]
+\tikzstyle{every state} = [rectangle, draw, fill=red!65!yellow!70!, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
+\node[initial,state] (AA){AA};
+\node[state][below left of=AA](BC){BC};
+\node[state][below right of=AA](CB){CB};
+\node[state][below of=BC](AC){AC};
+\node[state,accepting][below of=CB](AB){AB};
+\node[state][below of=AC](CC){CC};
+\node[state][below of=AB](BB){BB};
+\path (AA)edge node{a}(BC)
+                edge node{b}(CB)
+          (BC)edge node{a+b}(AC)
+          (AC)edge [bend left]node{a}(BC)
+                edge node{b}(CC)
+          (CC)edge [loop below]node{a+b}(CC)
+          (CB)edge [bend left]node{a+b}(AB)
+          (AB)edge node{a}(BB)
+                edge [bend left]node{b}(CB)
+          (BB)edge [bend left]node{a+b}(AB)
+          (CB)edge [bend left]node{a+b}(AB);
+          
+\end{tikzpicture}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{Q04: $L_3$= b(a+b)(b(a+b)+a(a+b))}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=orange]
+\node[initial,state] (AA) {AA};
+\node[state][right of=AA](CB){CB};
+\node[state,accepting][right of=CB](AB){AB};
+\node[state][right of=AB](BB){BB};
+\path (AA)edge node{b}(CB)
+          (CB)edge [bend left]node{a+b}(AB)
+          (AB)edge [bend left]node{b}(CB)
+                edge [bend left]node{a}(BB)
+          (BB)edge [bend left]node{a+b}(AB);
+       
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+\clearpage
+
+\begin{figure}
+\begin{center}
+\caption{Q05: $L_1$ = (aaa+bbb)*}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3.8cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=red!70!green!20!]
+\node[initial,state,accepting] (A) {A};
+\node[state][above right of=A](B){B};
+\node[state][below right of=A](C){C};
+\node[state][right of=B](D){D};
+\node[state][right of=C](E){E};
+\path (A)edge node{a}(B)
+              edge node{b}(C)
+          (B)edge node{a}(D)
+          (D)edge node{a}(A)
+          (C)edge node{b}(E)
+          (E)edge node{b}(A);    
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{Q05: $L_2$= a(a+b)*}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=red]
+\node[initial,state] (A) {A};
+\node[state,accepting][above right of=A](B){B};
+\node[state][below right of=A](C){C};
+\path (A)edge node{a}(B)
+         edge  node{b}(C)
+      (B)edge  [loop above]node{a,b}(B)
+      (C)edge [loop above]node{a,b}(C);
+\end{tikzpicture} 
+\end{center}
+\end{figure}
 \end{document}
+\clearpage
+\begin{figure}
+\begin{center}
+\caption{Q05: $L_1$$\bigcap$$L_2$}
+\begin{tikzpicture}[->,shorten >=1pt,node distance=5cm,auto]
+\tikzstyle{every state} = [rectangle, draw, fill=red!45!yellow!60!, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
+\tikzstyle{noise}=[circle,
+                                    thick,
+                                    minimum size=1.2cm,
+                                    draw=yellow!85!black,
+                                    fill=yellow!40,
+                                    decorate,
+                                    drop shadow,
+                                    decoration={random steps,
+                                                            segment length=2pt,
+                                                            amplitude=2pt}]
+\node[initial,state] (AA){AA};
+\node[state][below left of=AA](BB){BB};
+\node[state][below left of=BB](DB){DB};
+\node[noise][below right of=DB](CRASH){CRASH};
+\node[state,accepting][below left of=DB](AB){AB};
+\node[state][below right of=AA](CC){CC};
+\node[state][below right of=CC](EC){EC};
+\node[state][below right of=EC](AC){AC};
+\node[state][below left of=AC](BC){BC};
+\node[state][below left of=BC](DC){DC};
+\path (AA)edge node{a}(BB);
+        
+\end{tikzpicture}
+\end{center}
+\end{figure}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  5 AUG 2011 00:42
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  5 AUG 2011 15:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -714,27 +714,27 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros [1{/usr/local/texlive/2011/texmf-var/font
-s/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6] [7] [8]
-(./Mansfield-CS375-WK5.aux) ) 
+s/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11]
+[12] (./Mansfield-CS375-WK5.aux) ) 
 Here is how much of TeX's memory you used:
- 15650 strings out of 493633
- 318251 string characters out of 3143378
- 465713 words of memory out of 3000000
- 18631 multiletter control sequences out of 15000+200000
+ 15716 strings out of 493633
+ 319212 string characters out of 3143378
+ 465680 words of memory out of 3000000
+ 18697 multiletter control sequences out of 15000+200000
  8498 words of font info for 31 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  56i,10n,73p,488b,1870s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2011/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmex10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr8.pfb>
-Output written on Mansfield-CS375-WK5.pdf (8 pages, 79986 bytes).
+</usr/local/texlive/2011/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr8.pfb>
+Output written on Mansfield-CS375-WK5.pdf (12 pages, 89881 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+ 108 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 175 words of extra memory for PDF output out of 10000 (max. 10000000)
 
