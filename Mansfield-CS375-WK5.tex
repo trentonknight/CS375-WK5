@@ -709,7 +709,7 @@ The following are equivalent due to the below proofs in Figures 26-31:
 \clearpage
 \begin{figure}
 \begin{center}
-\caption{Q07: $L_1$$\bigcap$$L_2$}
+\caption{Q08: $L_1$$\neq$$L_2$}
 \begin{tikzpicture}[->,shorten >=1pt,node distance=5.5cm,auto]
 \tikzstyle{every state} = [rectangle, draw, fill=red!15!brown!45!, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
 \tikzstyle{Not} = [rectangle, draw, fill=yellow, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
@@ -734,6 +734,87 @@ Acceptable by $L_1$$\bigcap$$L_2$: A2, B2\\*
 Acceptable by $L_1$ only: A1, B1\\*
 Acceptable by $L_2$ only: C2\\*
 Due to A1: $L_1$$\neq$$L_2$
+\end{raggedright}
 
+\begin{figure}
+\begin{center}
+\caption{Q09: $FA_1$}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.3cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=red!25!brown!45!]
+\node[initial,state] (1) {1};
+\node[state][above right of=1](2){2};
+\node[state, accepting][right of=A](3){3};
+\path (1)edge node{a}(2)
+             edge node{b}(3)
+         (2)edge [loop above]node{b}(2)
+             edge node{a}(3)
+         (3)edge [loop right]node{a}(3)
+             edge [bend left]node{b}(1);      
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{Q09: $FA_2$}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.3cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=red!95!orange!45!]
+\node[initial,state] (X) {X};
+\node[state][above right of=X](Y){Y};
+\node[state,accepting][right of=X](Z){Z};
+\path (X)edge node{a}(Y)
+              edge node{b}(Z)
+          (Y)edge[bend right=89]node{b}(X)
+              edge node{a}(Z)
+          (Z)edge [loop right]node{a}(Z)
+              edge [bend left]node{b}(X);
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+\clearpage
+\begin{figure}
+\begin{center}
+\caption{Q09: $L_1$$\neq$$L_2$}
+\begin{tikzpicture}[->,shorten >=1pt,node distance=6.5cm,auto]
+\tikzstyle{every state} = [rectangle, draw, fill=red!45!red!60!, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
+\tikzstyle{noise}=[circle,
+                                    thick,
+                                    minimum size=1.2cm,
+                                    draw=yellow!85!black,
+                                    fill=yellow!40,
+                                    decorate,
+                                    drop shadow,
+                                    decoration={random steps,
+                                                            segment length=2pt,
+                                                            amplitude=2pt}]
+\node[state,initial] (1X){1X};
+\node[state][below left of=1X](2Y){2Y};
+\node[state][below right of=1X](3Z){3Z};
+\node[state][below of=2Y](2X){2X};
+\node[noise][below right of=2Y](3Y){3Y};
+\node[noise][below of=3Z](2Z){2Z};
+\path (1X)edge node{a}(2Y)
+                edge [bend left]node{b}(3Z)
+          (2Y)edge node{a}(3Z)
+                edge node{b}(2X)
+          (3Z)edge [loop right]node{a}(3Z)
+                edge node{b}(1X)
+          (2X)edge node{a}(3Y)
+                 edge node{b}(2Z)
+          (3Y)edge [bend left]node{a}(3Z)
+                 edge [bend left]node{b}(1X)
+          (2Z)edge [bend right]node{a}(3Z)
+                edge [bend right=20]node{b}(2X);      
+\end{tikzpicture}
+\end{center}
+\end{figure}
+
+
+\begin{raggedright}
+Not acceptable by $L_1$$\bigcap$$L_2$: 1X,1Y,2X,2Y\\*
+Acceptable by $L_1$$\bigcap$$L_2$: 3Z\\*
+Acceptable by $L_1$ only: 3X, 3Y\\*
+Acceptable by $L_2$ only: 1Z, 2Z\\*
+Due to 3Y and 2Z: $L_1$$\neq$$L_2$
 \end{raggedright}
 \end{document}
