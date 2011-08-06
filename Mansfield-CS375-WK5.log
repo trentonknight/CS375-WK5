@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  6 AUG 2011 15:49
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  6 AUG 2011 16:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -804,17 +804,19 @@ Overfull \hbox (34.39288pt too wide) in paragraph at lines 430--431
 
 ] [21] [22
 
-] [23]
-Overfull \hbox (3.29439pt too wide) in paragraph at lines 872--873
+] [23] [24] [25
+
+]
+Overfull \hbox (3.29439pt too wide) in paragraph at lines 982--983
  [] 
  []
 
-[24] (./Mansfield-CS375-WK5.aux) ) 
+[26] (./Mansfield-CS375-WK5.aux) ) 
 Here is how much of TeX's memory you used:
- 16423 strings out of 493633
- 329038 string characters out of 3143378
- 465565 words of memory out of 3000000
- 19383 multiletter control sequences out of 15000+200000
+ 16431 strings out of 493633
+ 329230 string characters out of 3143378
+ 465588 words of memory out of 3000000
+ 19391 multiletter control sequences out of 15000+200000
  29926 words of font info for 35 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  56i,11n,73p,488b,1828s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -826,10 +828,10 @@ c}{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc}</usr/
 local/texlive/2011/texmf-dist/fonts/type1/nowacki/iwona/iwonal.pfb></usr/local/
 texlive/2011/texmf-dist/fonts/type1/nowacki/iwona/iwonali.pfb></usr/local/texli
 ve/2011/texmf-dist/fonts/type1/nowacki/iwona/iwonam.pfb>
-Output written on Mansfield-CS375-WK5.pdf (24 pages, 128567 bytes).
+Output written on Mansfield-CS375-WK5.pdf (26 pages, 133191 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
+ 179 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  253 words of extra memory for PDF output out of 10000 (max. 10000000)
 

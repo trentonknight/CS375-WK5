@@ -841,6 +841,116 @@ Due to 3Y and 2Z: $L_1$$\neq$$L_2$
 \end{center}
 \end{figure}
 
+\begin{figure}
+\begin{center}
+\caption{Q10: Step 1}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.3cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=brown!95!]
+\tikzstyle{blue}=[circle,
+                                    thick,
+                                    minimum size=1.2cm,
+                                    draw=blue!80,
+                                    fill=blue!20,
+                                    drop shadow]
+\node[initial,blue] (A) {A};
+\node[state][right of=A](B){B};
+\node[state][right of=B](C){C};
+\node[state][below right of=A](D){D};
+\node[state,accepting][right of=D](E){E};
+\path (A)edge node{a}(B)
+              edge node{b}(D)
+          (B)edge [bend left=89]node{a}(C)
+              edge node{b}(D)
+          (C)edge node{a+b}(B)
+          (D)edge [loop below]node{a+b}(D)
+          (E)edge node{a}(B)
+              edge node{b}(C);
+         
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{Q10: Step 2}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.3cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=brown!95!]
+\tikzstyle{blue}=[circle,
+                                    thick,
+                                    minimum size=1.2cm,
+                                    draw=blue!80,
+                                    fill=blue!20,
+                                    drop shadow]
+\node[initial,blue] (A) {A};
+\node[blue][right of=A](B){B};
+\node[state][right of=B](C){C};
+\node[blue][below right of=A](D){D};
+\node[state,accepting][right of=D](E){E};
+\path 
+          (B)edge [bend left=89]node{a}(C)
+              edge node{b}(D)
+          (C)edge node{a+b}(B)
+          (D)edge [loop below]node{a+b}(D)
+          (E)edge node{a}(B)
+              edge node{b}(C);
+         
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{Q10: Step 3}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.3cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=brown!95!]
+\tikzstyle{blue}=[circle,
+                                    thick,
+                                    minimum size=1.2cm,
+                                    draw=blue!80,
+                                    fill=blue!20,
+                                    drop shadow]
+\node[initial,blue] (A) {A};
+\node[blue][right of=A](B){B};
+\node[blue][right of=B](C){C};
+\node[blue][below right of=A](D){D};
+\node[state,accepting][right of=D](E){E};
+\path 
+          (C)edge node{a+b}(B)
+          (E)edge node{a}(B)
+              edge node{b}(C);
+         
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+\clearpage
+\begin{raggedright}
+ This machine accepts no words due to the fact that node E remains unpainted and is the only final state.
+\end{raggedright}
+\begin{figure}
+\begin{center}
+\caption{Q10: Step 4}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.3cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=brown!95!]
+\tikzstyle{blue}=[circle,
+                                    thick,
+                                    minimum size=1.2cm,
+                                    draw=blue!80,
+                                    fill=blue!20,
+                                    drop shadow]
+\node[initial,blue] (A) {A};
+\node[blue][right of=A](B){B};
+\node[blue][right of=B](C){C};
+\node[blue][below right of=A](D){D};
+\node[state,accepting][right of=D](E){E};
+\path 
+          (E)edge node{a}(B)
+              edge node{b}(C);
+         
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+
 
 
 
