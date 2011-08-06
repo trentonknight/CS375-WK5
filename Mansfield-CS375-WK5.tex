@@ -11,9 +11,11 @@
 \usepackage[centering,includeheadfoot,margin=2cm]{geometry}
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,automata,trees, shadows,decorations.pathmorphing}
+\begin{document}
 \title{CS375 WK5}
 \author{Jason N Mansfield}
-\begin{document}
+\maketitle
+\clearpage
 
 \begin{figure}
 \begin{center}
@@ -950,12 +952,8 @@ Due to 3Y and 2Z: $L_1$$\neq$$L_2$
 \end{center}
 \end{figure}
 
-
-
-
-
-
 \clearpage
+
 \begin{figure}
 \begin{center}
 \caption{Q11: Blue Paint}
@@ -978,6 +976,104 @@ Due to 3Y and 2Z: $L_1$$\neq$$L_2$
           (E)edge [bend left=35]node{b}(A)
               edge node{a}(E)
           (F)edge [bend right=35]node{a+b}(A);
+         
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{Q11: Step 1}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.3cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=orange!95!brown!15!]
+\tikzstyle{blue}=[circle,
+                                    thick,
+                                    minimum size=1.2cm,
+                                    draw=blue!80,
+                                    fill=blue!20,
+                                    drop shadow]
+\node[initial,blue] (A) {A};
+\node[state][below left of=A](B){B};
+\node[state][below right of=A](C){C};
+\node[state,accepting][below right of=B](D){D};
+\node[state][below left of=B](E){E};
+\node[state][below right of=C](F){F};
+\path (A)edge [bend right=90]node{a}(E)
+              edge [bend left=90]node{b}(F)
+          (B)edge node{b}(E)
+              edge node{a}(D)
+          (C)edge node{a}(B)
+              edge node{b}(A)
+          (D)edge node{a}(F)
+              edge node{b}(C)
+          (E)edge [bend left=35]node{b}(A)
+              edge node{a}(E)
+          (F)edge [bend right=35]node{a+b}(A);
+         
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{Q11: Step 2}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.3cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=orange!95!brown!15!]
+\tikzstyle{blue}=[circle,
+                                    thick,
+                                    minimum size=1.2cm,
+                                    draw=blue!80,
+                                    fill=blue!20,
+                                    drop shadow]
+\node[initial,blue] (A) {A};
+\node[state][below left of=A](B){B};
+\node[state][below right of=A](C){C};
+\node[state,accepting][below right of=B](D){D};
+\node[blue][below left of=B](E){E};
+\node[blue][below right of=C](F){F};
+\path 
+          (B)edge node{b}(E)
+              edge node{a}(D)
+          (C)edge node{a}(B)
+              edge node{b}(A)
+          (D)edge node{a}(F)
+              edge node{b}(C)
+          (E)edge [bend left=35]node{b}(A)
+              edge node{a}(E)
+          (F)edge [bend right=35]node{a+b}(A);
+         
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+\clearpage
+\begin{raggedright}
+ This machine accepts no words due to the fact that node D remains unpainted and is the only final state.
+\end{raggedright}
+\begin{figure}
+\begin{center}
+\caption{Q11: Step 3}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.3cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=orange!95!brown!15!]
+\tikzstyle{blue}=[circle,
+                                    thick,
+                                    minimum size=1.2cm,
+                                    draw=blue!80,
+                                    fill=blue!20,
+                                    drop shadow]
+\node[initial,blue] (A) {A};
+\node[state][below left of=A](B){B};
+\node[state][below right of=A](C){C};
+\node[state,accepting][below right of=B](D){D};
+\node[blue][below left of=B](E){E};
+\node[blue][below right of=C](F){F};
+\path 
+          (B)edge node{b}(E)
+              edge node{a}(D)
+          (C)edge node{a}(B)
+              edge node{b}(A)
+          (D)edge node{a}(F)
+              edge node{b}(C);
+         
          
 \end{tikzpicture} 
 \end{center}
