@@ -556,9 +556,6 @@ Acceptable by $L_1$$\bigcap$$L_2$: AA, BA, CB,EB
 \end{center}
 \end{figure}
 \clearpage
-\begin{center}
-\textbf{($FA\rq{}_1$ + $FA_2$)\rq{}}
-\end{center}
 \begin{figure}
 \begin{center}
 \caption{Q07: $FA'_1$}
@@ -591,9 +588,26 @@ Acceptable by $L_1$$\bigcap$$L_2$: AA, BA, CB,EB
               edge [loop above]node{a}(A)
           (B)edge [bend left]node{a}(A)
               edge node{b}(C)
-          (C)edge [loop above]node{a+b}(C);
-       
-          
+          (C)edge [loop above]node{a+b}(C);       
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+\begin{figure}
+\begin{center}
+\caption{Q05: ($FA\rq{}_1$ + $FA_2$)\rq{} No final states}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=green!40]
+\node[initial,state] (1A) {1A};
+\node[state][below left of=1A](2A){2A};
+\node[state][below right of=1A](3B){3B};
+\node[state][right of=3B](4C){4C};
+\path (1A)edge node{a}(2A)
+                edge node{b}(3B)
+          (2A)edge node{b}(3B)
+                edge [bend left=70]node{a}(1A)
+          (3B)edge [bend right=70]node{a}(1A)
+                edge node{b}(4C)
+          (4C)edge [loop right]node{a+b}(4C);        
 \end{tikzpicture} 
 \end{center}
 \end{figure}
@@ -630,14 +644,29 @@ Acceptable by $L_1$$\bigcap$$L_2$: AA, BA, CB,EB
               edge [loop above]node{a}(A)
           (B)edge [bend left]node{a}(A)
               edge node{b}(C)
-          (C)edge [loop above]node{a+b}(C);
-       
-          
+          (C)edge [loop above]node{a+b}(C);        
 \end{tikzpicture} 
 \end{center}
 \end{figure}
+
+\begin{figure}
 \begin{center}
-\textbf{($FA_1$ + $FA\rq{}_2$)\rq{}}
+\caption{Q05: ($FA_1$ + $FA\rq{}_2$)\rq{} No final states}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=blue!40]
+\node[initial,state] (1A) {1A};
+\node[state][below left of=1A](2A){2A};
+\node[state][below right of=1A](3B){3B};
+\node[state][right of=3B](4C){4C};
+\path (1A)edge node{a}(2A)
+                edge node{b}(3B)
+          (2A)edge node{b}(3B)
+                edge [bend left=70]node{a}(1A)
+          (3B)edge [bend right=70]node{a}(1A)
+                edge node{b}(4C)
+          (4C)edge [loop right]node{a+b}(4C);        
+\end{tikzpicture} 
 \end{center}
+\end{figure}
 
 \end{document}
