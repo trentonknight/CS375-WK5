@@ -516,6 +516,8 @@ Acceptable by $L_1$$\bigcap$$L_2$: AA, BA, CB,EB
 \end{tikzpicture}
 \end{center}
 \end{figure}
+
+
 \clearpage
 The following are equivalent due to the below proofs in Figures 26-31:
 \begin{figure}
@@ -595,7 +597,7 @@ The following are equivalent due to the below proofs in Figures 26-31:
 \end{figure}
 \begin{figure}
 \begin{center}
-\caption{Q05: ($FA\rq{}_1$ + $FA_2$)\rq{} No final states}
+\caption{Q07: ($FA\rq{}_1$ + $FA_2$)\rq{} No final states}
 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
 \tikzstyle{every state}=[draw=black,text=black, ball color=green!40]
 \node[initial,state] (1A) {1A};
@@ -652,7 +654,7 @@ The following are equivalent due to the below proofs in Figures 26-31:
 
 \begin{figure}
 \begin{center}
-\caption{Q05: ($FA_1$ + $FA\rq{}_2$)\rq{} No final states}
+\caption{Q07: ($FA_1$ + $FA\rq{}_2$)\rq{} No final states}
 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
 \tikzstyle{every state}=[draw=black,text=black, ball color=blue!40]
 \node[initial,state] (1A) {1A};
@@ -670,4 +672,68 @@ The following are equivalent due to the below proofs in Figures 26-31:
 \end{center}
 \end{figure}
 
+\begin{figure}
+\begin{center}
+\caption{Q08: $FA_1$}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.3cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=orange!80!]
+\node[initial,state,accepting] (A) {A};
+\node[state,accepting][right of=A](B){B};
+\node[state][below right of=A](C){C};
+\path (A)edge [bend left]node{b}(B)
+              edge [bend right]node{a}(C)
+          (B)edge [bend left]node{b}(A)
+              edge [bend right]node{a}(C)
+          (C)edge [bend right]node{b}(B)
+              edge[loop below]node{a}(C);
+            
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\caption{Q08: $FA_2$}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.3cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=blue!40!]
+\node[initial,state] (1) {1};
+\node[accepting,state][right of=1](2){2};
+\path (1)edge [bend left]node{b}(2)
+             edge [loop above]node{a}(1)
+          (2)edge [loop above]node{b}(2)
+              edge [bend left]node{a}(1);
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+\clearpage
+\begin{figure}
+\begin{center}
+\caption{Q07: $L_1$$\bigcap$$L_2$}
+\begin{tikzpicture}[->,shorten >=1pt,node distance=5.5cm,auto]
+\tikzstyle{every state} = [rectangle, draw, fill=red!15!brown!45!, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
+\tikzstyle{Not} = [rectangle, draw, fill=yellow, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
+\node[Not] (A1){A1};
+\node[state][below left of=A1](C1){C1};
+\node[state][below right of=A1](B2){B2};
+\node[state][below left of=B2](A2){A2};
+\path (A1)edge node{a}(C1)
+                edge node{b}(B2) 
+         (C1)edge [loop left]node{b}(B2)
+                edge[loop left]node{a}(C1)
+         (B2)edge node{a}(C1)
+                edge node{b}(A2)
+         (A2)edge node{a}(C1)
+                 edge [bend right=78]node{b}(B2);    
+\end{tikzpicture}
+\end{center}
+\end{figure}
+\begin{raggedright}
+Not acceptable by $L_1$$\bigcap$$L_2$: C1\\*
+Acceptable by $L_1$$\bigcap$$L_2$: A2, B2\\*
+Acceptable by $L_1$ only: A1, B1\\*
+Acceptable by $L_2$ only: C2\\*
+Due to A1: $L_1$$\neq$$L_2$
+
+\end{raggedright}
 \end{document}
