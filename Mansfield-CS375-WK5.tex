@@ -817,4 +817,61 @@ Acceptable by $L_1$ only: 3X, 3Y\\*
 Acceptable by $L_2$ only: 1Z, 2Z\\*
 Due to 3Y and 2Z: $L_1$$\neq$$L_2$
 \end{raggedright}
+
+\begin{figure}
+\begin{center}
+\caption{Q10: Blue Paint}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.3cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=brown!95!]
+\node[initial,state] (A) {A};
+\node[state][right of=A](B){B};
+\node[state][right of=B](C){C};
+\node[state][below right of=A](D){D};
+\node[state,accepting][right of=D](E){E};
+\path (A)edge node{a}(B)
+              edge node{b}(D)
+          (B)edge [bend left=89]node{a}(C)
+              edge node{b}(D)
+          (C)edge node{a+b}(B)
+          (D)edge [loop below]node{a+b}(D)
+          (E)edge node{a}(B)
+              edge node{b}(C);
+         
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+
+
+
+
+\clearpage
+\begin{figure}
+\begin{center}
+\caption{Q11: Blue Paint}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.3cm, semithick]
+\tikzstyle{every state}=[draw=black,text=black, ball color=orange!95!brown!15!]
+\node[initial,state] (A) {A};
+\node[state][below left of=A](B){B};
+\node[state][below right of=A](C){C};
+\node[state,accepting][below right of=B](D){D};
+\node[state][below left of=B](E){E};
+\node[state][below right of=C](F){F};
+\path (A)edge [bend right=90]node{a}(E)
+              edge [bend left=90]node{b}(F)
+          (B)edge node{b}(E)
+              edge node{a}(D)
+          (C)edge node{a}(B)
+              edge node{b}(A)
+          (D)edge node{a}(F)
+              edge node{b}(C)
+          (E)edge [bend left=35]node{b}(A)
+              edge node{a}(E)
+          (F)edge [bend right=35]node{a+b}(A);
+         
+\end{tikzpicture} 
+\end{center}
+\end{figure}
+
+
 \end{document}
