@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  5 AUG 2011 22:10
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  5 AUG 2011 22:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -796,24 +796,26 @@ Overfull \hbox (34.39288pt too wide) in paragraph at lines 430--431
 
 
 
-] [16] [17] [18] (./Mansfield-CS375-WK5.aux) ) 
+] [16
+
+] [17] [18] (./Mansfield-CS375-WK5.aux) ) 
 Here is how much of TeX's memory you used:
- 16211 strings out of 493633
- 325155 string characters out of 3143378
- 465541 words of memory out of 3000000
- 19171 multiletter control sequences out of 15000+200000
+ 16212 strings out of 493633
+ 325170 string characters out of 3143378
+ 465558 words of memory out of 3000000
+ 19172 multiletter control sequences out of 15000+200000
  29926 words of font info for 35 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  56i,11n,73p,488b,1828s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2011/texmf-di
-st/fonts/enc/dvips/iwona/sy-iwona.enc}{/usr/local/texlive/2011/texmf-dist/fonts
-/enc/dvips/iwona/ex-iwona.enc}{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvi
-ps/iwona/rm-iwona.enc}{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/iwona
-/mi-iwona.enc}{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/iwona/ec-iwon
-a.enc}</usr/local/texlive/2011/texmf-dist/fonts/type1/nowacki/iwona/iwonal.pfb>
-</usr/local/texlive/2011/texmf-dist/fonts/type1/nowacki/iwona/iwonali.pfb></usr
-/local/texlive/2011/texmf-dist/fonts/type1/nowacki/iwona/iwonam.pfb>
-Output written on Mansfield-CS375-WK5.pdf (18 pages, 112230 bytes).
+{/usr/local/texlive/2011/texmf-dist/fo
+nts/enc/dvips/iwona/sy-iwona.enc}{/usr/local/texlive/2011/texmf-dist/fonts/enc/
+dvips/iwona/ex-iwona.enc}{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/iw
+ona/rm-iwona.enc}{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/iwona/mi-i
+wona.enc}{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc
+}</usr/local/texlive/2011/texmf-dist/fonts/type1/nowacki/iwona/iwonal.pfb></usr
+/local/texlive/2011/texmf-dist/fonts/type1/nowacki/iwona/iwonali.pfb></usr/loca
+l/texlive/2011/texmf-dist/fonts/type1/nowacki/iwona/iwonam.pfb>
+Output written on Mansfield-CS375-WK5.pdf (18 pages, 113559 bytes).
 PDF statistics:
  142 PDF objects out of 1000 (max. 8388607)
  83 compressed objects within 1 object stream
