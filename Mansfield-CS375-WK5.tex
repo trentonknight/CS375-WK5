@@ -671,7 +671,7 @@ Acceptable by $L_1$$\bigcap$$L_2$: End State on Both (B2,A2) Non-End states on b
 \clearpage
 \begin{figure}
 \begin{center}
-\caption{Q09: $L_1$$\neq$$L_2$}
+\caption{Q09: Before removing states}
 \begin{tikzpicture}[->,shorten >=1pt,node distance=6.5cm,auto]
 \tikzstyle{every state} = [rectangle, draw, fill=red!45!red!60!, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
 \tikzstyle{noise}=[circle,
@@ -705,15 +705,31 @@ Acceptable by $L_1$$\bigcap$$L_2$: End State on Both (B2,A2) Non-End states on b
 \end{tikzpicture}
 \end{center}
 \end{figure}
-
-
+\clearpage
 \begin{raggedright}
-Not acceptable by $L_1$$\bigcap$$L_2$: 1X,1Y,2X,2Y\\*
-Acceptable by $L_1$$\bigcap$$L_2$: 3Z\\*
-Acceptable by $L_1$ only: 3X, 3Y\\*
-Acceptable by $L_2$ only: 1Z, 2Z\\*
-Due to 3Y and 2Z: $L_1$$\neq$$L_2$
+Acceptable by $L_1$$\bigcap$$L_2$: End State on Both (3Z) Non-End states on both (2Y, 2X) Initial State (1X)
 \end{raggedright}
+\begin{figure}
+\begin{center}
+\caption{Q09: $L_1$$\cap$$L_2$}
+\begin{tikzpicture}[->,shorten >=1pt,node distance=6.5cm,auto]
+\tikzstyle{every state} = [rectangle, draw, fill=orange!45!red!60!, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
+\node[state,initial] (1X){1X};
+\node[state][below left of=1X](2Y){2Y};
+\node[state][below right of=1X](3Z){3Z};
+\node[state][below of=2Y](2X){2X};
+\path (1X)edge node{a}(2Y)
+                edge [bend left]node{b}(3Z)
+          (2Y)edge node{a}(3Z)
+                edge node{b}(2X)
+          (3Z)edge [loop right]node{a}(3Z)
+                edge node{b}(1X);
+\end{tikzpicture}
+\end{center}
+\end{figure}
+
+
+
 
 \begin{figure}
 \begin{center}
