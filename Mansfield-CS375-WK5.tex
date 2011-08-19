@@ -611,17 +611,16 @@ Acceptable by $L_1$$\bigcap$$L_2$: End State on Both (1A) Non-End states on both
 \clearpage
 \begin{figure}
 \begin{center}
-\caption{Q08: $L_1$$\neq$$L_2$}
+\caption{Q08: $L_1$$\cap$$L_2$}
 \begin{tikzpicture}[->,shorten >=1pt,node distance=5.5cm,auto]
-\tikzstyle{every state} = [rectangle, draw, fill=red!15!brown!45!, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
-\tikzstyle{Not} = [rectangle, draw, fill=yellow, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
-\node[Not] (A1){A1};
+\tikzstyle{every state} = [rectangle, draw, fill=red!75!brown!45!, text width=5em, text centered, rounded corners, minimum height=4em, drop shadow]
+\node[state] (A1){A1};
 \node[state][below left of=A1](C1){C1};
 \node[state][below right of=A1](B2){B2};
 \node[state][below left of=B2](A2){A2};
 \path (A1)edge node{a}(C1)
                 edge node{b}(B2) 
-         (C1)edge [loop left]node{b}(B2)
+         (C1)edge [loop above]node{b}(B2)
                 edge[loop left]node{a}(C1)
          (B2)edge node{a}(C1)
                 edge node{b}(A2)
@@ -631,11 +630,7 @@ Acceptable by $L_1$$\bigcap$$L_2$: End State on Both (1A) Non-End states on both
 \end{center}
 \end{figure}
 \begin{raggedright}
-Not acceptable by $L_1$$\bigcap$$L_2$: C1\\*
-Acceptable by $L_1$$\bigcap$$L_2$: A2, B2\\*
-Acceptable by $L_1$ only: A1, B1\\*
-Acceptable by $L_2$ only: C2\\*
-Due to A1: $L_1$$\neq$$L_2$
+Acceptable by $L_1$$\bigcap$$L_2$: End State on Both (B2,A2) Non-End states on both (C1) Initial State (A1)
 \end{raggedright}
 
 \begin{figure}
